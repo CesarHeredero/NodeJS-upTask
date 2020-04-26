@@ -31,5 +31,11 @@ module.exports = function() {
     // Tareas
     router.post('/proyectos/:url', tareasConroller.agregarTarea);
 
+    // Actualizar tarea
+    router.patch('/tareas/:id', tareasConroller.cambiarEstadoTarea);
+
+    // Eliminar tarea
+    router.delete('/tareas/:id', tareasConroller.eliminarTarea);
+
     return router;
 };
