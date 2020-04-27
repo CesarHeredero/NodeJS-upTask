@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 html(lang="es")
     head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{nombrePagina}
-        link(rel="stylesheet", href="/css/normalize.css")
-        link(rel="stylesheet", href="/css/app.css")
+        include partials/header
     body
         header.barra
             h1 upTask - administrador de proyectos
-            a(href="#") Cerrar sesión
+            a(href="/cerrar-sesion") Cerrar Sesión
         main.contenedor
             aside.contenedor-proyectos
                 .panel.crear-proyecto
@@ -25,4 +21,3 @@ html(lang="es")
 
             //- pre= vardump(proyectos)
         script(src='/dist/bundle.js')
-        script(src='https://kit.fontawesome.com/f147319592.js', crossorigin='anonymous')
