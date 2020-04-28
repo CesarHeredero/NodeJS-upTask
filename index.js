@@ -53,8 +53,11 @@ app.use(passport.session());
 
 //pasar vardom a la app
 app.use((req, res, next) => {
+
     res.locals.vardump = helpers.vardump;
     res.locals.sms = req.flash();
+    res.locals.usuario = {...req.user } || null;
+    console.log(res.locals.usuario);
     next();
 });
 
