@@ -72,7 +72,7 @@ module.exports = function() {
     router.post('/crear-cuenta',
         usuariosConroller.crearCuenta
     );
-
+    router.get('/confirmar/:correo', usuariosConroller.confirmarCuenta);
     // iniciar sesion
     router.get('/iniciar-sesion',
         usuariosConroller.formIniciarSesion
@@ -83,6 +83,12 @@ module.exports = function() {
 
     // cerrar sesion
     router.get('/cerrar-sesion', authController.cerarSesion);
+
+    // reestablecer contraseña
+    router.get('/reestablecer', usuariosConroller.formReestablecerPassword);
+    router.post('/reestablecer', authController.enviarToken);
+    router.get('/reestablecer/:token', authController.validarToken);
+    router.post('/reestablecer/:token', authController.actualizarPassword);
 
     return router;
 };

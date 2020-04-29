@@ -8,6 +8,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
 
+
 // Helpers
 const helpers = require('./helpers');
 
@@ -57,7 +58,7 @@ app.use((req, res, next) => {
     res.locals.vardump = helpers.vardump;
     res.locals.sms = req.flash();
     res.locals.usuario = {...req.user } || null;
-    console.log(res.locals.usuario);
+    console.log(req.user);
     next();
 });
 

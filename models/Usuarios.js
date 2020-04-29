@@ -33,6 +33,12 @@ const Usuarios = db.define('usuarios', {
                 msg: 'La contraseña tiene que estar rellena'
             }
         }
+    },
+    token: Sequelize.STRING,
+    expiracion: Sequelize.DATE,
+    activo: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
     }
 }, {
     hooks: {
